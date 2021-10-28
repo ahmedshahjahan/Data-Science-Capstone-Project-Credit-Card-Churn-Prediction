@@ -106,6 +106,7 @@ I have used StandardScaler as scaling function for training and test set separat
 To predict the class or category we need to use the classification algorithm. The Classification algorithm’s function is to identify the category of new observations based on training data. In Classification, a program learns from the given dataset or observations and then classifies new observation into classes or groups. Such as, Yes or No, 0 or 1. In classification algorithm, a discrete output function(y) is mapped to input variable(x). 
 
 **Evaluation Metrics for Model Evaluation**
+
 Accuracy
 
 Accuracy in classification problems is the number of correct predictions made by the model over all kinds of predictions made.
