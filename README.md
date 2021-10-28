@@ -1,4 +1,4 @@
-**##CREDIT CARD CUSTOMER ATTRITION (CHURN) PREDICTION**
+**CREDIT CARD CUSTOMER ATTRITION (CHURN) PREDICTION**
 
 Building a predictive churn model helps us make proactive changes to the retention efforts that drive down churn rates. Understanding how churn impacts the current revenue goals and making predictions about how to manage those issues in the future also helps us stem the flow of churned customers. The ability to predict that a particular customer is at a high risk of churning, while there is still time to do something about it, represents a huge additional potential revenue source for every online business. To gain revenue and retain customers flow, I have selected my capstone project topics as “Credit Card Customer Attrition (Churn) Prediction”.
 
@@ -129,9 +129,19 @@ F1 Score
 
 The F1 score can be thought of as a weighted average of precision and recall, with the best value being 1 and the worst being 0. Precision and recall also make an equal contribution to the F1 ranking.
 
+**Classification Algorithms and Evaluation Results**
 
+To find the best classifier algorithm to predict the possible churning customer I have used different classification algorithms including KNN, Logistic Regression, Decision Tree. Support Vector Machines, Random Forest, Gradient Boosting, and XGBoost Classifiers. For each of those classification algorithms, I have used hyperparameter tuning by using the randomized search cv with cv=5 to get the best model. The result of the randomized search cv outputs the best parameter of the model. By using those parameters, I have trained the training data and evaluated the test data to measure model performance. The table and figure below for each classifier shows the final outcomes of the corresponding model, the confusion matrix, and the ROC curve.
 
+<img width="487" alt="Screenshot 2021-10-28 105220" src="https://user-images.githubusercontent.com/79649430/139281349-56bab588-e87f-4fc3-869d-a23999620c8e.png">
 
+**Optimum Model and Findings**
+
+Among all, the XGBoost Classifier performed well based on the several model evaluation metrics I have used. The resultant summary of XGBoost classifier is Precision Score: 0.935, Recall Score: 0.909, Training Accuracy: 0.999, Test Accuracy: 0.974, F1 Score: 0.974, Area Under ROC: 0.994. To predict all possible churning customer accurately or to get a model that will have low false negatives, I have used the metric ‘Recall’ as my main evaluation metric. A good classification model should have a high recall value to classify all possible churning customers. Despite the target attribute of my model contained class imbalance data, the ‘Recall’ value of 0.909 or 91% indicates that my model worked well on predicting possible churning customers. Also, the ‘F1 Score’ of 0.974 and the Area under roc curve of 0.994 indicates that my model performed well.
+
+**Conclusion and Future Work**
+
+The target attributes have class imbalance data, and approximately 16% of the customers are labeled with ‘Attrited Customer’ and the remaining 84% customers are labeled with ‘Current Customer’. Despite of the class imbalance, the ‘Recall’ value of 0.909 or 91%, ‘F1 Score’ of 0.974, and AUROC of 0.994 indicates that the XGBoost classifier accurately predicted the possible churning customers. There are also few correlations, and outliers in the dataset, and for that my model did not get 100% accuracy on all of the metrics. Spending more time on preprocessing to tackle those issues will be helpful to get better accuracy on each of the evaluation metrics I have used.
 
 
 
