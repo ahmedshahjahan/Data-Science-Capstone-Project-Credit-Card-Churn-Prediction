@@ -61,6 +61,7 @@ The histogram of any numerical column will depict the visual distribution of val
 ![image](https://user-images.githubusercontent.com/79649430/139188748-a19bae48-028c-4a86-9065-16824e26548d.png)
 
 The figure below shows the comparison between the theoretical cdf with empirical cdf. I have used this visualization to more precisely make a conclusion about the distribution of numerical columns whether it is normally distributed or not. It is clearly visible that the continuous numerical columns 'Age', ‘'Total_Amt_Chng_Q4_Q1', 'Total_Ct_Chng_Q4_Q1', and in the dataframe are approximately normally distributed and the rest are not normally distributed. Also, the discrete numerical columns 'Dependent_Count', 'Total_Relationship_Count', 'Months_Inactive', 'Contacts_Count' are also approximately normally distributed.
+
 ![image](https://user-images.githubusercontent.com/79649430/139188859-8bf7df42-ebb7-41b7-9835-dbcf1fcb0cde.png) ![image](https://user-images.githubusercontent.com/79649430/139188888-1892ed5a-74f8-474c-aed6-3ec574189873.png) 
 ![image](https://user-images.githubusercontent.com/79649430/139188929-ba706dc0-943f-4035-87d2-7266393eb13d.png) ![image](https://user-images.githubusercontent.com/79649430/139188967-80dcb100-c2c1-4177-8d18-6241790dceac.png)
 
