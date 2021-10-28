@@ -56,7 +56,7 @@ Avg_Utilization_Ratio: Average Card Utilization Ratio
 
 The dataset had initially 10135 observations and 21 attributes. I have deleted the unnecessary ‘CLIETNUM’ columns and renamed the necessary attributes for simplicity. The index of the dataset is range index and columns are mixed with numerical and categorical values. Among the rest 20 attributes, 7 columns contain categorical values, and 14 columns contain numerical values. Broadly speaking 40% of the columns data types are ‘int64’, 30% of the columns data type is ‘float64’, and the rest 30% of the columns data types are ‘object’.
 
-![image](https://user-images.githubusercontent.com/79649430/139185564-6a88c18a-607e-47a6-80f8-19277974bf20.png)
+![Pie_Chart](https://user-images.githubusercontent.com/79649430/139298701-ab86c9bc-5d26-4cba-a164-5898a01cf0fd.png)
 
 **3. Exploratory Data Analysis**
 
@@ -64,33 +64,48 @@ The dataset had initially 10135 observations and 21 attributes. I have deleted t
 
 The histogram of any numerical column will depict the visual distribution of values of that column. The figure below shows the distribution of numerical columns by using histogram. By observing histogram its clear that some of the numerical columns are continuous and the rest are discrete. The columns ‘Dependent_Count’, ‘Total_Relationship_Count’, ‘Months_Inactive’, ‘Contacts_Count’ columns are discrete. Among those discrete columns the values of ‘Dependent_Count’ and ‘Contacts_Count’ columns are normally distributed and the other two columns have no trend or skewness. The rest numerical columns are continuous and among them the 'Total_Amt_Chng_Q4_Q1', 'Total_Ct_Chng_Q4_Q1', and the ‘Age’ columns are also normally distributed. The values of ‘Total_Trans_Count’ column shows bimodal distribution. The values of the ‘Credit_Limit’, ‘Avg_Utilization_Ratio’, and ‘Average_Open_To_Buy’ columns are skewed to the right. The peak count value of those three columns at ‘0’ clearly shows us that a significant amount customer is not utilizing their credits at all. The ‘Total_Revolving_Bal’ column shows that also a huge number of customers utilizes all their credit limit and does not have any balance to spend. By observing the ‘Total_Trans_Amt’ column it is clear that most of the customers spending is in between 0 and 5000 USD for 12-month duration period. 
 
-![Histogram_of_Total_Trans_Ct_Column](https://user-images.githubusercontent.com/79649430/139298410-fe48a1c2-37a6-47b5-bd0c-3f5def2d67c3.png)
+![Histogram](https://user-images.githubusercontent.com/79649430/139299060-17de9c67-e804-4a66-8489-d259c2fd2b37.png)
+![Boxplot](https://user-images.githubusercontent.com/79649430/139299087-8304bccf-fc00-47ec-9cc8-ec7c02f2e0fe.png)
 
-![image](https://user-images.githubusercontent.com/79649430/139188748-a19bae48-028c-4a86-9065-16824e26548d.png) 
-![image](https://user-images.githubusercontent.com/79649430/139189226-a047cd65-b6a6-4f51-8019-4058eba6b685.png)
 
 The figure below shows the comparison between the theoretical cdf with empirical cdf. I have used this visualization to more precisely make a conclusion about the distribution of numerical columns whether it is normally distributed or not. It is clearly visible that the continuous numerical columns 'Age', ‘'Total_Amt_Chng_Q4_Q1', 'Total_Ct_Chng_Q4_Q1', and in the dataframe are approximately normally distributed and the rest are not normally distributed. Also, the discrete numerical columns 'Dependent_Count', 'Total_Relationship_Count', 'Months_Inactive', 'Contacts_Count' are also approximately normally distributed.
 
-![image](https://user-images.githubusercontent.com/79649430/139188859-8bf7df42-ebb7-41b7-9835-dbcf1fcb0cde.png) ![image](https://user-images.githubusercontent.com/79649430/139188888-1892ed5a-74f8-474c-aed6-3ec574189873.png) 
-![image](https://user-images.githubusercontent.com/79649430/139188929-ba706dc0-943f-4035-87d2-7266393eb13d.png) ![image](https://user-images.githubusercontent.com/79649430/139188967-80dcb100-c2c1-4177-8d18-6241790dceac.png) ![image](https://user-images.githubusercontent.com/79649430/139189093-0b17d69d-ceeb-418e-8239-076ae1ac1edc.png) ![image](https://user-images.githubusercontent.com/79649430/139189121-225991b7-865b-43e6-8a73-a825c6689b31.png)
+![ECDF_of_Age_Column](https://user-images.githubusercontent.com/79649430/139299171-650e9322-4542-4cbf-a4e6-c712f95bcf95.png)
+![ECDF_of_Total_Ct_Chng_Q4_Q1_Column](https://user-images.githubusercontent.com/79649430/139299297-4ca0e0b7-b0d9-4fad-b580-d0017eb488e7.png)
+![ECDF_of_Total_Relationship_Count_Column](https://user-images.githubusercontent.com/79649430/139299337-d8e3675d-4000-4b09-8752-5a2dbeb76c5e.png)
+![ECDF_of_Avg_Open_To_Buy_Column](https://user-images.githubusercontent.com/79649430/139299213-e3182ed5-2313-4245-b30a-4cf646601d6e.png)
+![ECDF_of_Dependent_Count_Column](https://user-images.githubusercontent.com/79649430/139299239-68dfa922-81bb-41fd-a1fd-5b50380b27ef.png)
+![ECDF_of_Months_On_Book_Column](https://user-images.githubusercontent.com/79649430/139299265-084f7931-f08d-4080-8b16-7829b8a6fe6a.png)
+![ECDF_of_Total_Amt_Chng_Q4_Q1_Column](https://user-images.githubusercontent.com/79649430/139299280-7e23cccb-5e1b-4517-8b08-0de13ed7a84e.png)
+
 
 **Detecting and Removing Outliers**
 
 Boxplot is an essential visualization type for detecting outlier of a numerical column. Figure below shows the boxplot of few numerical columns and the visualization of standard deviation-based outlier detection. To accurately detect and correct the columns that contain outlier value I have used standard deviation-based outlier detection. If the distribution of values in a particular column is above or below the Mean±3*Standard_Deviation the column contain outlier and it must be removed to get better classification accuracy. By observing the histogram and vertical lines (Mean,  Mean±3*Standard_Deviation) its visible that the numerical columns 'Months_Inactive', 'Contact_Count', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Ct_Chng_Q4_Q1' contains significant outliers. Finally, I have removed those outlier values from the dataset without the discrete 'Months_Inactive', and 'Contact_Count' columns. The result of outlier value removal creates few ‘NaN’ entries in the dataset and those null values have further removed from the dataset.
 
-![image](https://user-images.githubusercontent.com/79649430/139189262-84e4bf38-85bf-4d57-bf92-ebdcb718cdfc.png) ![image](https://user-images.githubusercontent.com/79649430/139189278-6e89cbf7-da54-472f-b6d0-c2df980adce9.png) ![image](https://user-images.githubusercontent.com/79649430/139189305-083cb888-243d-4f62-8d9d-11384439498d.png) ![image](https://user-images.githubusercontent.com/79649430/139189334-2c908f21-748f-4c52-a1d8-6ced7fac5495.png)
+![Visualizing_Outlier_of_Total_Trans_Amt_Column](https://user-images.githubusercontent.com/79649430/139299541-29306cfe-79d2-49df-bc9c-0d16235af57a.png)
+![Visualizing_Outlier_of_Total_Ct_Chng_Q4_Q1_Column](https://user-images.githubusercontent.com/79649430/139299575-f1736a89-86a9-4185-8ae0-29a447f84269.png)
+![Visualizing_Outlier_of_Total_Amt_Chng_Q4_Q1_Column](https://user-images.githubusercontent.com/79649430/139299599-e246eba0-4376-4c74-80b9-861d15a33c78.png)
+![Visualizing_Outlier_of_Age_Column](https://user-images.githubusercontent.com/79649430/139299622-62dbcaf9-1806-46fc-821a-139434bd6de4.png)
+![Visualizing_Outlier_of_Months_Inactive_Column](https://user-images.githubusercontent.com/79649430/139299651-f8534083-6428-49cb-9475-3967e7b02595.png)
 
 **Detecting and Removing Correlations**
 
 Heatmaps are used to show relationships between two variables, one plotted on each axis. By observing how cell colors change across each axis, we can observe if there are any patterns in value for one or both variables. By observing the output of heatmap it is clearly visible that there is a significantly high positive correlations between the 'Credit_Limit' and 'Avg_Open_To_Buy' columns and the Pearson correlation coefficient value is 0.9958. Also, there is a positive and negative correlation between few other columns also.
 
-![image](https://user-images.githubusercontent.com/79649430/139189433-80ed8f9f-3857-4be6-9622-ba63915124d6.png)
+![Heatmap](https://user-images.githubusercontent.com/79649430/139299406-8f2a88d9-0635-4769-b694-7189d81fc47b.png)
+![High_Correlated_Columns](https://user-images.githubusercontent.com/79649430/139299435-c0c5218c-c2fc-4ad5-afff-387f972e325c.png)
 
 **Visualizing the Distribution of Categorical Attributes**
 
 The figures below show the count plot which visualizes the distribution of categorical columns. The 'Card_Category' column contains class imbalance data.
 
-![image](https://user-images.githubusercontent.com/79649430/139189564-d34dcf0a-56c2-4693-a645-d3f1cfc83da2.png) ![image](https://user-images.githubusercontent.com/79649430/139189583-58e026dd-540a-4b04-981c-e8b4cb54c0a6.png) ![image](https://user-images.githubusercontent.com/79649430/139189613-99f431c1-3b44-4e7f-9e82-b7e36b4713dd.png) ![image](https://user-images.githubusercontent.com/79649430/139189633-5e01a8fa-f448-402d-91a5-2687e6c970ad.png)
+![Count_Plot_of_Attrition_Flag_Column](https://user-images.githubusercontent.com/79649430/139299745-2b5ddee5-7a18-4200-b63c-1d19e7d31493.png)
+![Count_Plot_of_Card_Category_Column](https://user-images.githubusercontent.com/79649430/139299764-615a2cbc-13ab-4ef0-97c6-a316cf1ad7f6.png)
+![Count_Plot_of_Income_Column](https://user-images.githubusercontent.com/79649430/139299800-f3a36bb8-1ad1-4f4f-afbd-cc51d8254172.png)
+![Count_Plot_of_Education_Column](https://user-images.githubusercontent.com/79649430/139299823-e0569312-7acf-4db7-9b69-1ba1426a340a.png)
+![Count_Plot_of_Marital_Status_Column](https://user-images.githubusercontent.com/79649430/139299861-02f40d51-6afe-4fef-8570-e951b7d7adfe.png)
+
 
 **4. Preprocessing and Training Data Development**
 
