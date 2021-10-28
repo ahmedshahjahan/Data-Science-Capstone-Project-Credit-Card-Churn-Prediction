@@ -63,6 +63,40 @@ The histogram of any numerical column will depict the visual distribution of val
 The figure below shows the comparison between the theoretical cdf with empirical cdf. I have used this visualization to more precisely make a conclusion about the distribution of numerical columns whether it is normally distributed or not. It is clearly visible that the continuous numerical columns 'Age', ‘'Total_Amt_Chng_Q4_Q1', 'Total_Ct_Chng_Q4_Q1', and in the dataframe are approximately normally distributed and the rest are not normally distributed. Also, the discrete numerical columns 'Dependent_Count', 'Total_Relationship_Count', 'Months_Inactive', 'Contacts_Count' are also approximately normally distributed.
 
 ![image](https://user-images.githubusercontent.com/79649430/139188859-8bf7df42-ebb7-41b7-9835-dbcf1fcb0cde.png) ![image](https://user-images.githubusercontent.com/79649430/139188888-1892ed5a-74f8-474c-aed6-3ec574189873.png) 
-![image](https://user-images.githubusercontent.com/79649430/139188929-ba706dc0-943f-4035-87d2-7266393eb13d.png) ![image](https://user-images.githubusercontent.com/79649430/139188967-80dcb100-c2c1-4177-8d18-6241790dceac.png)
+![image](https://user-images.githubusercontent.com/79649430/139188929-ba706dc0-943f-4035-87d2-7266393eb13d.png) ![image](https://user-images.githubusercontent.com/79649430/139188967-80dcb100-c2c1-4177-8d18-6241790dceac.png) ![image](https://user-images.githubusercontent.com/79649430/139189093-0b17d69d-ceeb-418e-8239-076ae1ac1edc.png) ![image](https://user-images.githubusercontent.com/79649430/139189121-225991b7-865b-43e6-8a73-a825c6689b31.png)
+
+**Detecting and Removing Outliers**
+Boxplot is an essential visualization type for detecting outlier of a numerical column. Figure below shows the boxplot of few numerical columns and the visualization of standard deviation-based outlier detection. To accurately detect and correct the columns that contain outlier value I have used standard deviation-based outlier detection. If the distribution of values in a particular column is above or below the Mean±3*Standard_Deviation the column contain outlier and it must be removed to get better classification accuracy. By observing the histogram and vertical lines (Mean,  Mean±3*Standard_Deviation) its visible that the numerical columns 'Months_Inactive', 'Contact_Count', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Ct_Chng_Q4_Q1' contains significant outliers. Finally, I have removed those outlier values from the dataset without the discrete 'Months_Inactive', and 'Contact_Count' columns. The result of outlier value removal creates few ‘NaN’ entries in the dataset and those null values have further removed from the dataset.
+![image](https://user-images.githubusercontent.com/79649430/139189226-a047cd65-b6a6-4f51-8019-4058eba6b685.png)
+![image](https://user-images.githubusercontent.com/79649430/139189262-84e4bf38-85bf-4d57-bf92-ebdcb718cdfc.png) ![image](https://user-images.githubusercontent.com/79649430/139189278-6e89cbf7-da54-472f-b6d0-c2df980adce9.png) ![image](https://user-images.githubusercontent.com/79649430/139189305-083cb888-243d-4f62-8d9d-11384439498d.png) ![image](https://user-images.githubusercontent.com/79649430/139189334-2c908f21-748f-4c52-a1d8-6ced7fac5495.png)
+
+**Detecting and Removing Correlations**
+Heatmaps are used to show relationships between two variables, one plotted on each axis. By observing how cell colors change across each axis, we can observe if there are any patterns in value for one or both variables. By observing the output of heatmap it is clearly visible that there is a significantly high positive correlations between the 'Credit_Limit' and 'Avg_Open_To_Buy' columns and the Pearson correlation coefficient value is 0.9958. Also, there is a positive and negative correlation between few other columns also.
+![image](https://user-images.githubusercontent.com/79649430/139189433-80ed8f9f-3857-4be6-9622-ba63915124d6.png)
+
+**Visualizing the Distribution of Categorical Attributes**
+The figures below show the count plot which visualizes the distribution of categorical columns. The 'Card_Category' column contains class imbalance data.
+![image](https://user-images.githubusercontent.com/79649430/139189564-d34dcf0a-56c2-4693-a645-d3f1cfc83da2.png) ![image](https://user-images.githubusercontent.com/79649430/139189583-58e026dd-540a-4b04-981c-e8b4cb54c0a6.png) ![image](https://user-images.githubusercontent.com/79649430/139189613-99f431c1-3b44-4e7f-9e82-b7e36b4713dd.png) ![image](https://user-images.githubusercontent.com/79649430/139189633-5e01a8fa-f448-402d-91a5-2687e6c970ad.png)
+
+**Preprocessing and Training Data Development**
+Data preprocessing is an integral step in Machine Learning as the quality of data and the useful information that can be derived from it directly affects the ability of our model to learn; therefore, it is extremely important to preprocess the data before feeding it into our model. The steps I followed for preprocess the data is given below:
+
+Encoded the target attribute ‘Attrition_Flag’ to binary 1 and 0. I have encoded the binary ‘1’ for 'Attrited Customer' and binary ‘0’ for 'Existing Customer'. The main goal of the classification algorithms is to find the possible 'Attrited Customer' or is to predict ‘1’.
+
+Separated the target/dependent variable y, and the predictor/Independent variables X from the dataset.
+
+Split the data (X and y) into train and test with default test size of 0.25 for performing training and evaluation for each classifier. After splitting the shape of the X_train, X_test, y_train, and y_test respectively (7108, 19), (2370, 19), (7108,), and (2370,)
+
+I have used StandardScaler as scaling function for training and test set separately because StandardScaler removes the mean and scales each feature/variable to unit variance. This operation is performed feature-wise in an independent way. I have used scaling function because the numerical columns of the dataset still contained outliers and the range of each individual columns are different. A significant number of observations are below numerical value 1 and some are above 35000.
+
+
+
+
+
+
+
+
+
+
 
 
