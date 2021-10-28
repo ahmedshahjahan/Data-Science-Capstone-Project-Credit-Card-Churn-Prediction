@@ -1,13 +1,11 @@
 **CREDIT CARD CUSTOMER ATTRITION (CHURN) PREDICTION**
 
-**Introduction**
-
 Building a predictive churn model helps us make proactive changes to the retention efforts that drive down churn rates. Understanding how churn impacts the current revenue goals and making predictions about how to manage those issues in the future also helps us stem the flow of churned customers. The ability to predict that a particular customer is at a high risk of churning, while there is still time to do something about it, represents a huge additional potential revenue source for every online business. To gain revenue and retain customers flow, I have selected my capstone project topics as “Credit Card Customer Attrition (Churn) Prediction”.
 
-**Problem Statement**
+**1. Problem Statement**
 Predict the credit card customer attrition rate and find the potential churning customers by analyzing data for a specific period (last twelve month) of time to minimize churn rate by providing better service for company’s growth and financial stability.
 
-**Description of Attributes**
+**2. Description of Attributes**
 By importing necessary libraries and loading the downloaded dataset ‘BankChurners.csv’, I have observed that there are total of 21 attributes. The description of attributes is given below:
 
 CLIENTNUM: Client number. Unique identifier for the customer holding the account
