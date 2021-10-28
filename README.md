@@ -9,9 +9,13 @@ Predict the credit card customer attrition rate and find the potential churning 
 
 **Description of Attributes**
 By importing necessary libraries and loading the downloaded dataset ‘BankChurners.csv’, I have observed that there are total of 21 attributes. The description of attributes is given below:
+
 CLIENTNUM: Client number. Unique identifier for the customer holding the account
+
 Attrition_Flag: Internal event (customer activity) variable - if the account is closed then 1 else 0
+
 Customer_Age: Demographic variable - Customer's Age in Years
+
 Gender: Demographic variable - M=Male, F=Female
 Dependent_count: Demographic variable - Number of dependents
 Education_Level: Demographic variable - Educational Qualification of the account holder (example: high school, college graduate, etc.)
