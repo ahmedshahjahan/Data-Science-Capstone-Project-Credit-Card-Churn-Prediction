@@ -94,17 +94,19 @@ Boxplot is an essential visualization type for detecting outlier of a numerical 
 Heatmaps are used to show relationships between two variables, one plotted on each axis. By observing how cell colors change across each axis, we can observe if there are any patterns in value for one or both variables. By observing the output of heatmap it is clearly visible that there is a significantly high positive correlations between the 'Credit_Limit' and 'Avg_Open_To_Buy' columns and the Pearson correlation coefficient value is 0.9958. Also, there is a positive and negative correlation between few other columns also.
 
 ![Heatmap](https://user-images.githubusercontent.com/79649430/139299406-8f2a88d9-0635-4769-b694-7189d81fc47b.png)
-![High_Correlated_Columns](https://user-images.githubusercontent.com/79649430/139299435-c0c5218c-c2fc-4ad5-afff-387f972e325c.png)
+![High_Correlated_Columns](https://user-images.githubusercontent.com/79649430/139301123-9d399c70-34bb-4255-a45a-0a65adcd1975.png)
+
 
 **Visualizing the Distribution of Categorical Attributes**
 
 The figures below show the count plot which visualizes the distribution of categorical columns. The 'Card_Category' column contains class imbalance data.
 
-![Count_Plot_of_Attrition_Flag_Column](https://user-images.githubusercontent.com/79649430/139299745-2b5ddee5-7a18-4200-b63c-1d19e7d31493.png)
-![Count_Plot_of_Card_Category_Column](https://user-images.githubusercontent.com/79649430/139299764-615a2cbc-13ab-4ef0-97c6-a316cf1ad7f6.png)
-![Count_Plot_of_Income_Column](https://user-images.githubusercontent.com/79649430/139299800-f3a36bb8-1ad1-4f4f-afbd-cc51d8254172.png)
-![Count_Plot_of_Education_Column](https://user-images.githubusercontent.com/79649430/139299823-e0569312-7acf-4db7-9b69-1ba1426a340a.png)
-![Count_Plot_of_Marital_Status_Column](https://user-images.githubusercontent.com/79649430/139299861-02f40d51-6afe-4fef-8570-e951b7d7adfe.png)
+![Count_Plot_of_Attrition_Flag_Column](https://user-images.githubusercontent.com/79649430/139300882-ce2690dd-b0d2-4e90-8d06-ab48bf2d3503.png)
+![Count_Plot_of_Card_Category_Column](https://user-images.githubusercontent.com/79649430/139300903-4e9c5d09-dce8-41de-8f3f-a7de350ae031.png)
+![Count_Plot_of_Income_Column](https://user-images.githubusercontent.com/79649430/139300964-a683e7aa-1882-4751-b2ef-029186008f4c.png)
+![Count_Plot_of_Education_Column](https://user-images.githubusercontent.com/79649430/139300921-64cbd517-ceea-48fe-a120-f9105e40d137.png)
+![Count_Plot_of_Marital_Status_Column](https://user-images.githubusercontent.com/79649430/139300996-13c26e05-20a6-4004-93e0-24885a445e64.png)
+![Count_Plot_of_Gender_Column](https://user-images.githubusercontent.com/79649430/139301018-65abf346-af46-4c08-a7c7-75e1bd1c5dca.png)
 
 
 **4. Preprocessing and Training Data Development**
