@@ -89,6 +89,8 @@ Split the data (X and y) into train and test with default test size of 0.25 for 
 
 I have used StandardScaler as scaling function for training and test set separately because StandardScaler removes the mean and scales each feature/variable to unit variance. This operation is performed feature-wise in an independent way. I have used scaling function because the numerical columns of the dataset still contained outliers and the range of each individual columns are different. A significant number of observations are below numerical value 1 and some are above 35000.
 
+**Modeling**
+To predict the class or category we need to use the classification algorithm. The Classification algorithm’s function is to identify the category of new observations based on training data. In Classification, a program learns from the given dataset or observations and then classifies new observation into classes or groups. Such as, Yes or No, 0 or 1. In classification algorithm, a discrete output function(y) is mapped to input variable(x). 
 
 
 
