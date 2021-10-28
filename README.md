@@ -3,9 +3,11 @@
 Building a predictive churn model helps us make proactive changes to the retention efforts that drive down churn rates. Understanding how churn impacts the current revenue goals and making predictions about how to manage those issues in the future also helps us stem the flow of churned customers. The ability to predict that a particular customer is at a high risk of churning, while there is still time to do something about it, represents a huge additional potential revenue source for every online business. To gain revenue and retain customers flow, I have selected my capstone project topics as “Credit Card Customer Attrition (Churn) Prediction”.
 
 **1. Problem Statement**
+
 Predict the credit card customer attrition rate and find the potential churning customers by analyzing data for a specific period (last twelve month) of time to minimize churn rate by providing better service for company’s growth and financial stability.
 
 **2. Description of Attributes**
+
 By importing necessary libraries and loading the downloaded dataset ‘BankChurners.csv’, I have observed that there are total of 21 attributes. The description of attributes is given below:
 
 CLIENTNUM: Client number. Unique identifier for the customer holding the account
@@ -56,6 +58,8 @@ The dataset had initially 10135 observations and 21 attributes. I have deleted t
 
 ![image](https://user-images.githubusercontent.com/79649430/139185564-6a88c18a-607e-47a6-80f8-19277974bf20.png)
 
+**3. Exploratory Data Analysis**
+
 **Visualizing the Distribution of Numerical Attributes**
 
 The histogram of any numerical column will depict the visual distribution of values of that column. The figure below shows the distribution of numerical columns by using histogram. By observing histogram its clear that some of the numerical columns are continuous and the rest are discrete. The columns ‘Dependent_Count’, ‘Total_Relationship_Count’, ‘Months_Inactive’, ‘Contacts_Count’ columns are discrete. Among those discrete columns the values of ‘Dependent_Count’ and ‘Contacts_Count’ columns are normally distributed and the other two columns have no trend or skewness. The rest numerical columns are continuous and among them the 'Total_Amt_Chng_Q4_Q1', 'Total_Ct_Chng_Q4_Q1', and the ‘Age’ columns are also normally distributed. The values of ‘Total_Trans_Count’ column shows bimodal distribution. The values of the ‘Credit_Limit’, ‘Avg_Utilization_Ratio’, and ‘Average_Open_To_Buy’ columns are skewed to the right. The peak count value of those three columns at ‘0’ clearly shows us that a significant amount customer is not utilizing their credits at all. The ‘Total_Revolving_Bal’ column shows that also a huge number of customers utilizes all their credit limit and does not have any balance to spend. By observing the ‘Total_Trans_Amt’ column it is clear that most of the customers spending is in between 0 and 5000 USD for 12-month duration period. 
@@ -87,7 +91,7 @@ The figures below show the count plot which visualizes the distribution of categ
 
 ![image](https://user-images.githubusercontent.com/79649430/139189564-d34dcf0a-56c2-4693-a645-d3f1cfc83da2.png) ![image](https://user-images.githubusercontent.com/79649430/139189583-58e026dd-540a-4b04-981c-e8b4cb54c0a6.png) ![image](https://user-images.githubusercontent.com/79649430/139189613-99f431c1-3b44-4e7f-9e82-b7e36b4713dd.png) ![image](https://user-images.githubusercontent.com/79649430/139189633-5e01a8fa-f448-402d-91a5-2687e6c970ad.png)
 
-**Preprocessing and Training Data Development**
+**4. Preprocessing and Training Data Development**
 
 Data preprocessing is an integral step in Machine Learning as the quality of data and the useful information that can be derived from it directly affects the ability of our model to learn; therefore, it is extremely important to preprocess the data before feeding it into our model. The steps I followed for preprocess the data is given below:
 
@@ -99,7 +103,7 @@ Split the data (X and y) into train and test with default test size of 0.25 for 
 
 I have used StandardScaler as scaling function for training and test set separately because StandardScaler removes the mean and scales each feature/variable to unit variance. This operation is performed feature-wise in an independent way. I have used scaling function because the numerical columns of the dataset still contained outliers and the range of each individual columns are different. A significant number of observations are below numerical value 1 and some are above 35000.
 
-**Modeling**
+**5. Modeling**
 
 To predict the class or category we need to use the classification algorithm. The Classification algorithm’s function is to identify the category of new observations based on training data. In Classification, a program learns from the given dataset or observations and then classifies new observation into classes or groups. Such as, Yes or No, 0 or 1. In classification algorithm, a discrete output function(y) is mapped to input variable(x). 
 
