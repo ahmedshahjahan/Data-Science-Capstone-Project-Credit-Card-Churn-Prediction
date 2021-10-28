@@ -53,10 +53,12 @@ Total_Ct_Chng_Q4_Q1: Change in Transaction Count (Q4 over Q1)
 Avg_Utilization_Ratio: Average Card Utilization Ratio
 
 **Dataset Summary**
+
 The dataset had initially 10135 observations and 21 attributes. I have deleted the unnecessary ‘CLIETNUM’ columns and renamed the necessary attributes for simplicity. The index of the dataset is range index and columns are mixed with numerical and categorical values. Among the rest 20 attributes, 7 columns contain categorical values, and 14 columns contain numerical values. Broadly speaking 40% of the columns data types are ‘int64’, 30% of the columns data type is ‘float64’, and the rest 30% of the columns data types are ‘object’.
 ![image](https://user-images.githubusercontent.com/79649430/139185564-6a88c18a-607e-47a6-80f8-19277974bf20.png)
 
 **Visualizing the Distribution of Numerical Attributes**
+
 The histogram of any numerical column will depict the visual distribution of values of that column. The figure below shows the distribution of numerical columns by using histogram. By observing histogram its clear that some of the numerical columns are continuous and the rest are discrete. The columns ‘Dependent_Count’, ‘Total_Relationship_Count’, ‘Months_Inactive’, ‘Contacts_Count’ columns are discrete. Among those discrete columns the values of ‘Dependent_Count’ and ‘Contacts_Count’ columns are normally distributed and the other two columns have no trend or skewness. The rest numerical columns are continuous and among them the 'Total_Amt_Chng_Q4_Q1', 'Total_Ct_Chng_Q4_Q1', and the ‘Age’ columns are also normally distributed. The values of ‘Total_Trans_Count’ column shows bimodal distribution. The values of the ‘Credit_Limit’, ‘Avg_Utilization_Ratio’, and ‘Average_Open_To_Buy’ columns are skewed to the right. The peak count value of those three columns at ‘0’ clearly shows us that a significant amount customer is not utilizing their credits at all. The ‘Total_Revolving_Bal’ column shows that also a huge number of customers utilizes all their credit limit and does not have any balance to spend. By observing the ‘Total_Trans_Amt’ column it is clear that most of the customers spending is in between 0 and 5000 USD for 12-month duration period. 
 ![image](https://user-images.githubusercontent.com/79649430/139188748-a19bae48-028c-4a86-9065-16824e26548d.png)
 
@@ -66,19 +68,23 @@ The figure below shows the comparison between the theoretical cdf with empirical
 ![image](https://user-images.githubusercontent.com/79649430/139188929-ba706dc0-943f-4035-87d2-7266393eb13d.png) ![image](https://user-images.githubusercontent.com/79649430/139188967-80dcb100-c2c1-4177-8d18-6241790dceac.png) ![image](https://user-images.githubusercontent.com/79649430/139189093-0b17d69d-ceeb-418e-8239-076ae1ac1edc.png) ![image](https://user-images.githubusercontent.com/79649430/139189121-225991b7-865b-43e6-8a73-a825c6689b31.png)
 
 **Detecting and Removing Outliers**
+
 Boxplot is an essential visualization type for detecting outlier of a numerical column. Figure below shows the boxplot of few numerical columns and the visualization of standard deviation-based outlier detection. To accurately detect and correct the columns that contain outlier value I have used standard deviation-based outlier detection. If the distribution of values in a particular column is above or below the Mean±3*Standard_Deviation the column contain outlier and it must be removed to get better classification accuracy. By observing the histogram and vertical lines (Mean,  Mean±3*Standard_Deviation) its visible that the numerical columns 'Months_Inactive', 'Contact_Count', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Ct_Chng_Q4_Q1' contains significant outliers. Finally, I have removed those outlier values from the dataset without the discrete 'Months_Inactive', and 'Contact_Count' columns. The result of outlier value removal creates few ‘NaN’ entries in the dataset and those null values have further removed from the dataset.
 ![image](https://user-images.githubusercontent.com/79649430/139189226-a047cd65-b6a6-4f51-8019-4058eba6b685.png)
 ![image](https://user-images.githubusercontent.com/79649430/139189262-84e4bf38-85bf-4d57-bf92-ebdcb718cdfc.png) ![image](https://user-images.githubusercontent.com/79649430/139189278-6e89cbf7-da54-472f-b6d0-c2df980adce9.png) ![image](https://user-images.githubusercontent.com/79649430/139189305-083cb888-243d-4f62-8d9d-11384439498d.png) ![image](https://user-images.githubusercontent.com/79649430/139189334-2c908f21-748f-4c52-a1d8-6ced7fac5495.png)
 
 **Detecting and Removing Correlations**
+
 Heatmaps are used to show relationships between two variables, one plotted on each axis. By observing how cell colors change across each axis, we can observe if there are any patterns in value for one or both variables. By observing the output of heatmap it is clearly visible that there is a significantly high positive correlations between the 'Credit_Limit' and 'Avg_Open_To_Buy' columns and the Pearson correlation coefficient value is 0.9958. Also, there is a positive and negative correlation between few other columns also.
 ![image](https://user-images.githubusercontent.com/79649430/139189433-80ed8f9f-3857-4be6-9622-ba63915124d6.png)
 
 **Visualizing the Distribution of Categorical Attributes**
+
 The figures below show the count plot which visualizes the distribution of categorical columns. The 'Card_Category' column contains class imbalance data.
 ![image](https://user-images.githubusercontent.com/79649430/139189564-d34dcf0a-56c2-4693-a645-d3f1cfc83da2.png) ![image](https://user-images.githubusercontent.com/79649430/139189583-58e026dd-540a-4b04-981c-e8b4cb54c0a6.png) ![image](https://user-images.githubusercontent.com/79649430/139189613-99f431c1-3b44-4e7f-9e82-b7e36b4713dd.png) ![image](https://user-images.githubusercontent.com/79649430/139189633-5e01a8fa-f448-402d-91a5-2687e6c970ad.png)
 
 **Preprocessing and Training Data Development**
+
 Data preprocessing is an integral step in Machine Learning as the quality of data and the useful information that can be derived from it directly affects the ability of our model to learn; therefore, it is extremely important to preprocess the data before feeding it into our model. The steps I followed for preprocess the data is given below:
 
 Encoded the target attribute ‘Attrition_Flag’ to binary 1 and 0. I have encoded the binary ‘1’ for 'Attrited Customer' and binary ‘0’ for 'Existing Customer'. The main goal of the classification algorithms is to find the possible 'Attrited Customer' or is to predict ‘1’.
